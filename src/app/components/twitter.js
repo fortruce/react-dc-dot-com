@@ -3,8 +3,12 @@ import { connect } from "react-redux";
 import { fetchTweets } from "../actions";
 
 class Twitter extends React.Component {
-	componentDidMount(){
+	componentWillMount() {
 		this.props.dispatch(fetchTweets());
+		this._interval = setInterval(() => this.props.dispatch(fetchTweets()), 60000);
+	}
+	componentWillUnmount() {
+		clearInterval(this._interval);
 	}
 	render(){
 		let tweets = this.props.tweets.map(function(tweet){

@@ -11,6 +11,7 @@ export default function App(props) {
 				<li><Link to="/about">About Us</Link></li>
 				<li><Link to="/resources">Resources</Link></li>
 				<li><Link to="/doesn't exist">This Should 404</Link></li>
+				<li><Link to="/articles">Articles</Link></li>
 			</ul>
 			<Twitter />
 			<div className="rdc-content">
